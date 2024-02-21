@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+  <!-- Add Bootstrap CSS link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Add Bootstrap JS and jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container mt-5">
+    <h1> lists</h1>
+    <table class=" table table-border">
+        <thead>
+        <tr>
+            <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for crud in crud %}
+        <tr>
+            <td>{{ crud.id }}</td>
+            <td> {{crud.name }}</td>
+            <td>{{ crud.email }}</td>
+                  <td>{{ crud.phone }}</td>
+                  <td>{{ crud.address }}</td>
+            <td>
+                <a href="/update/{{ crud.id }}" class="btn btn-primary">Edit</a>
+                <a href="/delete/{{ crud.id }}" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/create" class="btn btn-sucess">add employee </a>
+</div>
+
+
+       
+ 
+
+</body>
+
+</html>
